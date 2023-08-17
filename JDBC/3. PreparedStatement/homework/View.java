@@ -10,7 +10,7 @@ import javax.swing.JTextField;
 @SuppressWarnings("serial")
 public class View extends JFrame{
 	
-	public static final String IMG_PATH = "E:\\dev\\workspace\\jdbc_prj\\src\\kr\\co\\sist\\work\\img\\img";
+	public static final String IMG_PATH = "E:\\dev\\workspace\\jdbc_prj\\src\\kr\\co\\sist\\work\\img\\";
 	public static final String IMG_EXTENSION = ".png";
 	
 	private JLabel labelName;
@@ -39,20 +39,26 @@ public class View extends JFrame{
 		labelView = new JLabel();
 		
 		jtfName = new JTextField(20);
-		boxImg = new JComboBox<Integer>(new Integer[] {1,2,3,4});
+		boxImg = new JComboBox<Integer>();
+		boxImg.addItem(1);
+		boxImg.addItem(2);
+		boxImg.addItem(3);
+		boxImg.addItem(4);
+		
 		jtfAge = new JTextField(20);
 		jtfNum = new JTextField(20);
 		
 		insertBtn = new JButton("정보추가");
 		searchBtn = new JButton("정보검색");
 		
-		img = new ImageIcon("E:\\dev\\workspace\\jdbc_prj\\src\\kr\\co\\sist\\work\\img\\defualt.png");
+		img = new ImageIcon(IMG_PATH + "defualt" + IMG_EXTENSION);
 		labelView.setIcon(img);
 		
 		//Event추가
 		Controller c = new Controller(this);
 		insertBtn.addActionListener(c);
 		searchBtn.addActionListener(c);
+		boxImg.addActionListener(c);
 		addWindowListener(c);
 		
 		setLayout(null);

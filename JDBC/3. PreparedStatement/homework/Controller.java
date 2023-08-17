@@ -30,6 +30,9 @@ public class Controller extends WindowAdapter implements ActionListener{
 		if( e.getSource() == view.getSearchBtn()) {
 			searchInfo();
 		}
+		if( e.getSource() ==  view.getBoxImg() ) {
+			selectImg();
+		}
 	}//actionPerformed
 	
 	public void insertInfo() {
@@ -72,7 +75,7 @@ public class Controller extends WindowAdapter implements ActionListener{
 				view.getJtfAge().setText( String.valueOf(wVO.getAge()));
 				view.getJtfNum().setText(String.valueOf(wVO.getNum()));
 				
-				ImageIcon img = new ImageIcon( View.IMG_PATH + wVO.getImg() + View.IMG_EXTENSION  );
+				ImageIcon img = new ImageIcon( View.IMG_PATH + "img"+ wVO.getImg() + View.IMG_EXTENSION  );
 				view.getLabelView().setIcon(img);
 				
 			} else {
@@ -86,5 +89,11 @@ public class Controller extends WindowAdapter implements ActionListener{
 		}//end catch
 		
 	}//searchInfo
+	
+	public void selectImg() {
+		int imgNum = ((Integer)view.getBoxImg().getSelectedItem()).intValue();
+		ImageIcon img = new ImageIcon( View.IMG_PATH + "img"+ imgNum + View.IMG_EXTENSION  );
+		view.getLabelView().setIcon(img);
+	}
 
 }//Controller
