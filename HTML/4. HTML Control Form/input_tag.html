@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form>
+	<input><br/>
+	text : 한줄 입력할 때 사용<br/>
+	<input type="text" name="name"/><br/>
+	maxlength - 최대입력 글자 수, size - 보여줄 글자수 속성
+	<input type="text" name="name" maxlength="10" size="10"><br/>
+	password : 반향문자를 사용할 때
+	<input type="password" name="pass" ><br/>
+	checkbox : 여러 값을 선택할 때
+	<input type="checkbox" name="hobby" value="운동" checked="checked">운동
+	<input type="checkbox" name="hobby" value="영화">영화감상
+	<input type="checkbox" name="hobby" value="음악">음악감상
+	<input type="checkbox" name="hobby" value="미술">미술감상<br/>
+	radio : 여러값 중 하나를 선택할 때
+	<!-- radio는 name을 같이 설정하여 그룹으로 묶어서 사용.
+		HTML Form Control은 name속성이 같다면 배열로 처리한다.-->
+	<input type="radio" name="gender" value="남자" checked="checked">남자
+	<input type="radio" name="gender" value="여자">여자<br/>
+	<!-- value를 설정할 수 없는 유일한 태그
+		접속자 컴퓨터에 HDD를 접근할 수 있기 떄문에 보안의 이슈가 발생할 수 있으므로
+		value속성을 설정할 수 없다. -->
+	<input type="file" name="file"><br/>
+	숨겨서 값 넘기기 ( 자바스크립트에서 값을 생서앟여 value속성에 할당한다 )
+	<input type="hidden" name="name" value="value"><br/>
+	버튼류는 &lt;form&gt; 태그 안에 있을 때에만 동작한다.<br/>
+	버튼
+	<input type="button" value="버튼모양"><br/>
+	취소버튼
+	<input type="reset" value="취소버튼"><br/>
+	전송버튼
+	<input type="submit" value="전송버튼"><br/>
+	</form>
+	
+</body>
+</html>
