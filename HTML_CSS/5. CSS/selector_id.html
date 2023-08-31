@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/* id selector : body안에서 디자인을 유일하게 사용해야할 때 
+문법) #아이디명 { 속성 : 값;... }*/
+#hcy_img{ position : absolute; top: 100px; left:300px; }
+/* 같은 디자인 코드를 다른 id로 사용하고 싶다면 selector를 ,로 구분하여 정의하고 사용하면 된다.
+mutiple selector */
+#g1, #g2, #g3, #g4 { color:#3f7f7f; font-weight:bold; } 
+</style>
+</head>
+<body>
+	<div>
+	<img id="hcy_img" src="../common/images/hcy.png">
+	홍찬영 점심
+	</div>
+	<img src="../common/images/img1.png">
+	
+	<div id="g1">1조 - BMW서비스센터</div>
+	<div id="g2">2조 - </div>
+	<div id="g3">3조 - 사원관리</div>
+	<div id="g4">4조</div>
+</body>
+</html>
