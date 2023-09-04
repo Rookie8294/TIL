@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table{
+		border-top:2px solid #000;
+		width:800px;
+		border-spacing:0;
+	}
+	
+	th{
+		border-bottom:1px solid #000;
+		background-color:#F9F8F8;
+		font-size:14;
+		color:#222;
+	}
+	
+	tr{
+		height:70px;
+	}
+	
+	td{
+		padding:0 20px;
+		border-bottom:1px solid #000;
+	}
+	
+	sup{
+		color:#EA1C5B;
+	}
+	
+	.btn{
+		margin-left:10px;
+	}
+
+</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th><sup>*</sup>아이디</th><td><input name="id" type="text"><input class="btn" type="button" value="ID중복확인"></td>
+		</tr>
+		<tr>
+			<th><sup>*</sup>비밀번호</th><td><input type="text"><input class="btn" type="button" value="비밀번호 확인"><input type="text"></td>
+		</tr>
+		<tr>
+			<th><sup>*</sup>이름</th><td><input type="text"></td>
+		</tr>
+		<tr>
+			<th><sup>*</sup>생일</th><td><input type="text"></td>
+		</tr>
+		<tr>
+			<th>연락처</th><td><input type="text"></td>
+		</tr>
+		<tr>
+			<th><sup>*</sup>휴대폰</th><td><input type="text"><input type="checkbox">수신</td>
+		</tr>
+		<tr>
+			<th><sup>*</sup>이메일</th>
+			<td><input type="text">@<input type="text">
+				<select id="emailList">
+				<option value="0">선택해주세요.</option>
+				<option value="1">naver.com</option>
+				<option value="2">naver.com</option>
+				<option value="3">naver.com</option>
+			</select>
+			<input type="checkbox">수신
+			</td>
+		</tr>
+		<tr>
+			<th><sup>*</sup>성별</th><td><input type="radio">남자 <input type="radio">여자</td>
+		</tr>
+		<tr>
+			<th>소재지</th>
+			<td>
+			<select id="emailList">
+				<option value="0">선택해주세요.</option>
+				<option value="1">충주</option>
+				<option value="2">서울</option>
+				<option value="3">쌍용</option>
+			</select>
+			<td>
+		</tr>
+		<tr>
+			<th><sup>*</sup>우편번호</th><td><input name="id" type="text"><input class="btn" type="button" value="우편번호검색"></td>
+		</tr>
+		<tr>
+			<th><sup>*</sup>주소</th>
+			<td><input type="text" /><br><input type="text" /></td>
+		</tr>
+	</table>
+	
+</body>
+</html>
