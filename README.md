@@ -18,3 +18,7 @@
   7. [CSS] border,margin,padding,display
   8. [CSS] position,design
   9. [CSS] media_tag, design_tag, radius, shadow
+
+## JavaScript
+  1. inline, embed, external
+  2. operator, prompt, varable, condition_statement

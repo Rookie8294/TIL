@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/CSS/main_v20230906.css" />
+<style type="text/css">
+</style>
+<script type="text/javascript">
+//경고창 출력 : 코드의 실행을 멈춤.
+alert("경고창 출력!");
+//HTML <body> 태그에 출력
+window.document.write("HTML &lt;body&gt;에 출력 <br/>")
+document.write("window객체 생략 <br/>")
+console.log("지각안함");
+
+function useDocumentWrite(){
+	//<bod>가 로딩된 후 document.write가 호출되면 기존의 디자인이 모두 삭제 된 후 출력된다.
+	document.write("<marquee>Hello</marquee>");
+}
+
+</script>
+
+</head>
+<body>
+안녕하세요?<br/>
+<img  src="../common/images/hcy.png"><br/>
+<input type="button" value="클릭" class="btn" onclick="useDocumentWrite()">
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/CSS/main_v20230906.css" />
+<style type="text/css">
+</style>
+<script type="text/javascript">
+//지역변수 사용
+//1. 선언
+var age;
+alert( typeof( age ));
+
+//2. 값 할당
+age=20;
+alert( typeof(age));
+
+//3. 사용
+alert( age );
+
+var msg
+msg="변수는 일시적인 값을 저장할 용도";
+alert( msg + "의 데이터 형" + typeof( msg));//string
+
+var flag;
+flag=true;
+alert( flag + "의 데이터 형" + typeof( flag ));
+
+//hoisting
+function test(){
+	var i=10;
+	j="포항항";
+	
+	alert(i+"/"+j);
+}
+test();
+
+alert("전역변수 : " + j);
+
+
+</script>
+
+
+</head>
+<body>
+
+</body>
+</html>
