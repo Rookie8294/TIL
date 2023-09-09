@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/CSS/main_v20230906.css" />
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	//자바스크립트의 배열은 기능이 있다.
+	var arr = new Array()
+	arr = ["자바","오라클","JDBC","홍찬영","HTML","홍찬영","CSS"];
+
+	
+	//방의 값을 찾는 기능 :찾을 값이 없다면 -1을 반환
+	document.write( arr.indexOf("홍찬영") + "<br/>")
+	document.write( arr.indexOf("JDBC"));
+	
+	//삭제 : splice(시작, 끝)
+	arr.splice(2, 4);
+	for( var i = 0; i<arr.length; i++){
+		document.write( arr[i] + "<br/>");
+	}
+	
+	//배열 합치이기
+	var arr2 = new Array();
+	arr2 =["javascript", ...arr, "jQuery", "VUE.js", "JSP"];
+	for( var i = 0; i<arr2.length; i++){
+		document.write( arr2[i] + "<br/>");
+	}
+	
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

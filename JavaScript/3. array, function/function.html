@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/CSS/main_v20230906.css" />
+<style type="text/css">
+</style>
+<script type="text/javascript">
+//기명함수
+function test(){
+	document.write("매개변수 없는 기명함수");
+};
+test();
+
+document.write("<br>");
+//함수명은 다르게
+function test1(name){
+	document.write(name + "매개변수 있는 기명 함수");
+}
+
+//호출
+test1("ddd");
+
+document.write("<br>");
+//무기명함수(익명함수)
+var func1 = function(){
+	document.write("매개변수 없는 익명함수");
+}
+func1();
+
+document.write("<br>");
+
+var func2 = function(name, age){
+	document.write(name + "님" + age + "살 매개변수 있는 익명함수");
+};
+
+func2( "홍지성", 20);
+
+//반환형은 정의할 수 없으나 함수의 가장 마지막 줄에 return을 정의하면 값 반환
+function returnTest(){
+	return "오늘은 금요일";
+};
+
+returnTest();
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

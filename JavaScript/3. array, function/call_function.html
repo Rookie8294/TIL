@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/CSS/main_v20230906.css" />
+<style type="text/css">
+</style>
+<script type="text/javascript">
+function callTest(){
+	alert("콜");
+}
+</script>
+
+</head >
+<!-- <body onload="callTest()"> -->
+<body>
+	<strong>HTML body에서 javaScript함수를 호출</strong><br/>
+	<input type="button" value="클릭" class="btn" onclick="callTest()">
+	<!-- href는 HTMl영역이므로 HTML파일을 찾는다. callTest()라는 HTML이 존재하지 않기 때문에
+	404에러발생	  HTML영역에서 javascript영역으로 변경할 때에는 Javascript :  를 붙이며 ㄴ된다-->
+	<a href="javascript:callTest()">클릭</a>
+	<label>키가 눌림</label>
+	<input type="text" class="inputbox" placeholder="키눌림" onkeydown="callTest()"/><br/>
+	<label>키가 올라옴</label>
+	<input type="text" class="inputbox" placeholder="키눌림" onkeyup="callTest()"/><br/>
+	<label>마우스 포인터가 들어가는 순간</label><br/>
+	<img src="../common/images/hcy.png" onmouseover="callTest()"><br/>
+	<label>마우스 포인터가 빠저나가는 순간</label><br/>
+	<img src="../common/images/hcy.png" onmouseout="callTest()">
+	<label>change : 다른 옵션이 선택 될떄</label><br/>
+	<select onchange="callTest()">
+		<option>java</option>
+		<option>oracle</option>
+		<option>html</option>
+		<option>css</option>
+	</select>
+	<br/>
+	<label>change : 커서가 들어갔을 때의 값과 나갔을 때의 값이 다를 때</label><br/>
+	<input type="text" onchange="callTest()" class="inputBox"/><br/>
+	<label>onblur</label><br/>
+	<input type="text" onblur="callTest()" class="inputBox"/><br/>
+	<label>ondbclick</label><br/>
+	<input type="button" ondblclick="callTest()" class="btn" value="double click"><br/>
+	
+</body>
+</html>

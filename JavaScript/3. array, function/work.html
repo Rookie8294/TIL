@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/CSS/main_v20230906.css" />
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+var promYear = prompt("태어난 해를 입력해주세요", "1995");
+
+var date = new Date();
+var nowYear = date.getFullYear();
+console.log( nowYear - promYear );
+	
+var promGender = prompt("성별을 입력해주세요", "남");
+if( promGender == "남"){
+	document.write( "<div style='width:100px; height:100px; border-radius:50px; background:#0000FF;'></div>");
+} else if( promGender =="여" ){
+	document.write( "<div style='width:100px; height:100px; border-radius:50px; background:#FF0000;'></div>");
+}
+	
+var promColor = prompt("RGB를 입력해주세요", "");
+document.write( "<div style='width:100px; height:100px; background:#"+ promColor + " ;'></div>");
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
