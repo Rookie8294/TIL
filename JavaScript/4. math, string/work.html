@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/CSS/main_v20230906.css" />
+<style type="text/css">
+	#wrapBtn{text-align : center}
+	.btn2{width:120px}
+</style>
+<script type="text/javascript">
+	//이름 입력 버튼이 클릭되면 prompt로 이름을 입력받아 배열에 저장한다.
+	//이름 출력 버튼이 클릭되면 배열에 저장된 이름을 테이블로 출력한다.
+
+	
+
+	let nameArr = new Array();
+
+	function inputBtnClick(){
+		var inputName = prompt("이름을 입력해주세요.", "홍길동");
+
+		nameArr.push(inputName);
+	}
+
+	function printBtnClick(){
+		let text = "<table>";
+		text +="<tr><th style='width:200px'>성</th><th style='width:200px'>이름</th></tr>";
+		
+		let fisrtName = "";
+		let lastName = ""
+		
+		if(nameArr.length == 0 ){
+			text += "<tr><td colspan='2' >이름을 입력해주세요.</td></tr>";
+		}
+		
+		for( var i = 0; i<nameArr.length; i++){
+			let ind = 1;
+
+			if(  nameArr[i].startsWith("남궁") || nameArr[i].startsWith("제갈") || nameArr[i].startsWith("독고") || nameArr[i].startsWith("선우")){
+				ind = 2;
+			}
+			fisrtName = nameArr[i].substring(ind);
+
+			lastName = nameArr[i].substring(0,ind);
+			text += "<tr><td>" + lastName + "</td><td>" + fisrtName + "</td></tr>";
+		}
+
+		text += "</table>";
+
+		let input = document.getElementById("input");
+		input.innerHTML = text;
+
+	}
+	
+</script>
+</head>
+<body>
+	<div id="wrapBtn">
+		<input type="button" value="이름 입력" class="btn btn2" id="inputBtn" onclick="inputBtnClick()">
+		<input type="button" value="이름 출력" class="btn btn2" id="printBtn" onclick="printBtnClick()">
+
+		<div id="input"></div>
+
+		</table>
+	</div>
+
+</body>
+</html>

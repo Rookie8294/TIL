@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/CSS/main_v20230906.css" />
+<style type="text/css">
+    #div{ border:1px solid #333; width: 700px; height: 300px; overflow: auto; }
+    select{ width:150px; height: 30px; font-size: 25px; border: 1px solid #333; }
+</style>
+<script type="text/javascript">
+    function useStringFunction(){
+        var msg = "오늘은 11일 입니다.";
+
+        var output = msg +"의 글자의 수 : " + msg.length + "<br/>";
+
+        msg="AbcdefG";
+        output += msg + "를 모두 대문자로 : " + msg.toUpperCase() + "<br>";
+        output += msg + "를 모두 대문자로 : " + msg.toLowerCase() + "<br>";
+
+        msg = "Java, Oracle, HTML, VSCode, Eclipse";
+
+        output += msg + "에";
+        if( msg.indexOf("VSCode") != -1){
+            output += "VSCode 가 존재합니다. <br/>";
+        } else {
+            output+= "VSCode 가 없습니다. <br/>";
+        }
+        
+
+        output += msg + "에서 HTML의 시작인덱스 : " + msg.indexOf("HTML") + "<br/>";
+        output += msg + "에서 뒤부터 찾은 Java의 시작인덱스 : " + msg.lastIndexOf("Java") + "<br/>";
+
+        //특정문자를 기준으로 잘라서 배열로 얻을 때 사용
+        var subjectArr = msg.split(",");
+
+        var select = "<select>";
+            for( var i = 0; i< subjectArr.length; i++){
+                select += "<option>" + subjectArr[i] + "</option>";
+            }
+        select +="</select>";
+
+        output += select;
+
+        msg = "Java,Oracle,JDBC";
+        
+        output += msg + "에서 5번쨰 인덱스에 해당하는 문자 : " + msg.charAt(5) + "<br/>";
+        output += msg + "에서 5~10번쨰 인덱스에 해당하는 문자 : " + msg.substring(5, 11) + "<br/>";
+
+        //처음 , 이후부터 끝까지 잘라서 출력
+        output += msg + "처음 , 이후부터 끝까지 잘라서 출력 : " + msg.substring(msg.indexOf(",")+1,msg.length) +"<br/>";
+
+        msg="점심 ";
+        var msg2 = "맛있게 드세요.";
+
+        var msg3 = msg.concat(msg2);
+        output += msg3 + "<br/>";
+
+        msg = "서울시 강남구 역삼동";
+        output += msg + "은 서울 인가? " + msg.startsWith("서울") + "<br/>";
+
+        output += msg + "은 시골? " + msg.endsWith("리") + "<br/>";
+
+        let name = "이동원";
+
+        if( name =="이동원" ){
+            output += "반장";
+        }//end if
+
+        output += name + "님 안녕하세요<br/>";
+
+        msg="Java,Oracle,Java,HTML,JavaScript";
+
+        output += msg + "replace" + msg.replace("Java", "JavaSE") + "<br/>";
+        output += msg + "replaceAll" + msg.replaceAll("Java","Java SE") + "<br/>";
+        
+
+        msg = "     이태균      ";
+        output += msg + "[ " + msg.trim() + "]"
+
+        var divNode = document.getElementById("div");
+
+        divNode.innerHTML = output;
+    }//useStringFunction
+
+</script>
+
+</head>
+<body>
+    <input type="button" value="문자열함수" onclick="useStringFunction()" class="btn">
+    <div id="div"></div>
+</body>
+</html>
