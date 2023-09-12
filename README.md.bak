@@ -23,3 +23,4 @@
   1. inline, embed, external
   2. operator, prompt, varable, condition_statement
   3. array, function
+  4. math, string

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/CSS/main_v20230906.css" />
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+    function useDate(){
+        //1. 객체 생성
+        var date = new Date();
+        console.log(date);
+
+        var output="";
+        //2. 함수호출
+        output += date.getFullYear() + "-" + (date.getMonth() +1) + "-" + date.getDate() + " " + 
+            date.getHours()+ " : " + date.getMinutes()+ " : " + date.getSeconds();
+
+        //3. 값을 보여주
+        var divNode = document.getElementById("viewDate");
+        //4. 화면을 동적으로 변경하여 값을 보여준다.
+        divNode.innerHTML = date+ "<br/>" + output;
+
+    }//useDate
+</script>
+
+</head>
+<body>
+<input type="button" value="날짜얻기" class="btn" onclick="useDate()">
+<div id="viewDate"></div>
+</body>
+</html>
