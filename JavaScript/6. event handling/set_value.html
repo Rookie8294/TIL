@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/CSS/main_v20230906.css" />
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+    function setValue(){
+
+        var obj = document.frm;
+        
+        obj.id.value = "kim1234";
+        obj.pass.value = "qwe123";
+        obj.date.value = "2023-09-13";
+        obj.color.value = "#005FB8"
+        obj.hid.value = "숨김값"
+
+        //file은 JS나 
+
+        //이미지는 value가 아닌 src속성으로 변경한다.
+        obj.img.value="../common//images/hcy.png";
+
+        obj.info.value="오늘은 비오는 수요일\n내일은 맑은 목요일"
+    }
+</script>
+
+</head>
+<body>
+<form name="frm">
+    <fieldset>
+        <legend>JS에서HTML Form Control 값 설정</legend>
+        <label>text</label> <input type="text" name="id" class="inputBox"/><br/>
+        <label>password</label> <input type="password" name="pass" class="inputBox"/><br/>
+        <label>date</label> <input type="date" name="date" class="inputBox"/><br/>
+        <label>color</label> <input type="color" name="color" class="inputBox"/><br/>
+        <label>숨김값</label> <input type="hidden" name="hid" class="inputBox"/><br/>
+        <label>파일</label> <input type="file" name="upfile" class="inputBox"/><br/>
+        <label>이미지</label> <img src="../common//images/hcy.png" name="img" /><br/>
+        <textarea name="info"cols="30" rows="10"></textarea>
+        <input type="button" value="값 설정" class="btn" onclick="setValue()">
+    </fieldset>
+</form>
+</body>
+</html>

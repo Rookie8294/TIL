@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/CSS/main_v20230906.css" />
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+    //무기명 함수로 이벤트 등록
+    
+    window.onload = function(){
+        document.getElementById("btn").onclick=function() { alert("무기명함수") }
+        document.getElementById("sel").onchange=function() { alert(document.getElementById("sel").value+ "를 선택하셨습니다.") }
+    }
+</script>
+
+</head>
+<body>
+    <input type="button" value="클릭" class="btn" id="btn" />
+    <select id="sel" class="inputBox" class="inputBox">
+        <option value="Java">자바</option>
+        <option value="Oracle">오라클</option>
+        <option value="JSP">제이에스피</option>
+        <option value="JavaScript">자바스크립트</option>
+    </select>
+    
+</body>
+
+</html>
