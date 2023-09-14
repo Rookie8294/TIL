@@ -25,3 +25,4 @@
   3. array, function
   4. math, string
   5. HTML Form Control
+  6. event handling
