@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/CSS/main_v20230906.css" />
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+    window.onload=function(){
+        document.getElementById("btn1").addEventListener("click", useStringJson );
+        document.getElementById("btn2").addEventListener("click", useJson );
+    }//onload
+
+    function useStringJson(){
+        //1. JSONObject형태의 문자열을 생성
+        var data = "{ name : '장용석', age : 29, hobby : '독서' }";
+        //alert(typeof(data));
+
+        var jsonObject = eval( "(" + data +")");
+
+        //alert(typeof(jsonObject));
+
+        //값 추가
+        jsonObject.addr = "서울시 성북구 정릉동";
+        jsonObject.hobby = "바이크 라이딩";
+        jsonObject.birth=function(){alert("나의 생일은 오늘"); return "감사"; }
+
+        //값 삭제
+        delete jsonObject.hobby;
+
+        //parsing
+        alert( jsonObject.name + jsonObject.age + jsonObject.hobby + jsonObject.addr);
+        //함수는 ()를 붙이지 않으면 함수의 내용이 문자열로 반환된다
+        //alert( jsonObject.birth);
+        alert( jsonObject.birth());
+
+        
+    }//useStringJson
+
+    function useJson(){
+        var jsonObject={ name:"박상준", age:27, addr:"서울시 강남구 역삼동"};
+
+        alert( jsonObject );
+
+        //값 추가 ( 키가 없으면 추가되고, 있다면 덮어쓴다)
+        jsonObject.hobby="lol";
+        jsonObject.addr="경기도 수원시 영통구 영통동";
+
+        jsonObject.flag=true;
+
+        jsonObject.brith=function(){
+            var birth = "2023-09-15";
+            return birth;
+        }
+
+        //값 얻기 parsing
+        alert( jsonObject.name + " / " + jsonObject.age + " / " + jsonObject.addr + " / " + jsonObject.flag );
+
+        //함수인 겨웅 ()를 붙이지 않으면 함수의 내용이 문자열로 나온다.
+        alert(  jsonObject.brith );
+        alert(  jsonObject.brith() );
+
+
+    }//useJson
+
+</script>
+
+</head>
+<body>
+    <input type="button" value="string jsonobject" class="btn" id="btn1" />
+    <input type="button" value="jsonobject" class="btn" id="btn2" />
+</body>
+</html>

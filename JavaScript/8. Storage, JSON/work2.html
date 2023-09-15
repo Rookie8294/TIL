@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/CSS/main_v20230906.css" />
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+window.onload=function(){
+    document.getElementById("inputBtn").addEventListener("click", input );
+    document.getElementById("outputBtn").addEventListener("click", output );
+
+    
+    
+}
+var inputObj = {};
+
+function input(){
+    var name = document.getElementById("name").value;
+    var age = document.getElementById("age").value;
+
+    inputObj.name = name;
+    inputObj.age = age;    
+
+    document.getElementById("name").value = "";
+    document.getElementById("age").value = "";
+
+    document.getElementById("name").focus
+}//input
+
+function output(){
+
+    document.getElementById("div").innerHTML = inputObj.name + " / " + inputObj.age;
+    
+}//ouput
+</script>
+
+</head>
+<body>
+    <label>이름</label> <input type="text" id="name"> <br/>
+    <label>나이</label> <input type="text" id="age"> <br/>
+    <input type="button" id="inputBtn" value="입력">
+    <input type="button" id="outputBtn" value="출력">
+
+    <div id="div"></div>
+</body>
+</html>

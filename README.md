@@ -27,3 +27,4 @@
   5. HTML Form Control
   6. event handling
   7. key event, popup
+  8. Storage, JSON
