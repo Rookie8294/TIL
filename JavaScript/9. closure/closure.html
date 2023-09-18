@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/CSS/main_v20230906.css" />
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+    window.onload=function(){
+        document.getElementById("btn").addEventListener("click", useClosure);
+        document.getElementById("btn2").addEventListener("click", useClosure2);
+        document.getElementById("btn3").addEventListener("click", useClosure3);
+        document.getElementById("btn4").addEventListener("click", useClosure4);
+    }//end onload
+
+    function useClosure(){
+        //()를 사용한 closure
+        //1.선언
+        var closure = ( { name : "홍찬영", age : 25,
+                            addr : function(loc){
+                                var l_name ="서울시 강남구 역삼동";
+                                if( loc == "일본"){
+                                    l_name = "아키아바라 - 얼마까지 알아보셨어요?";
+                                }//end if
+                                return l_name;
+                            }//addr
+                            }
+                        );
+
+        alert(closure.name + " / " + closure.age + " / " + closure.addr("일본"));
+
+    }//useClosure
+
+    function test(){
+        //함수안의 지역변수나, 함수 안의 함수는 외부에서 직접 접근할 수 없다.
+        var name = "홍찬영";
+        function addr(){
+            return"인천시";
+        }
+    }
+
+    //접근 지정자가 없음으로 함수안의 지역변수나, 함수 아느이 함수는 외부에서 직접 접근할 수 없다. -- error
+    //alert(test().name);
+    //alert(test().addr());
+
+    function useClosure2(){
+        
+        var closure=function(){
+            var name = "송지하";
+
+            function printMsg( msg ){
+                alert(msg);
+                console.log(msg);
+            }//printMsg
+
+            //closure : 접근 제하이 가능하도록 설정할 때 사용
+            return { na : name, msg : printMsg };
+        }//anonymous function
+
+        alert( closure().na );
+        closure().msg("오늘은 월요일");
+    }//closure2
+
+    function useClosure3(){
+        //바로 호출하는 closure
+        var clo = function(){
+            var name = "홍찬영";
+            
+            function msg(msg){
+                alert("입력받은 메세지 : " + msg);
+            }
+
+            return { name : name, msg : msg};
+        }();
+
+        //호출이 되었기 때문에 closure를 사용할 때 ()를 붙이지 않아도 된다.
+        alert(clo.name);
+        clo.msg("hello");
+
+    }//end useClosure3
+
+    function useClosure4(){
+         //바로 호출하는 closure
+        var clo = function( addr ){
+            var name = "홍찬영";
+            
+            function msg(msg){
+                alert("입력받은 메세지 : " + msg);
+            }
+            function printAddr(){
+                alert("입력 주소 : " + addr );
+            }
+
+            return { name : name, msg : msg, print : printAddr };
+        }("서울시");
+
+        //호출이 되었기 때문에 closure를 사용할 때 ()를 붙이지 않아도 된다.
+        alert(clo.name);
+        clo.msg("hello");
+        clo.print();
+
+    }//end useClosure4
+
+
+</script>
+
+</head>
+<body>
+    <input type="button" value="()를 사용한 closure" class="btn" id="btn" />
+    <input type="button" value="{}를 사용한 closure" class="btn" id="btn2" />
+    <input type="button" value="{}를 사용한 closure" class="btn" id="btn3" />
+    <input type="button" value="{}를 사용한 closure" class="btn" id="btn4" />
+</body>
+</html>

@@ -28,3 +28,4 @@
   6. event handling
   7. key event, popup
   8. Storage, JSON
+  9. closure
