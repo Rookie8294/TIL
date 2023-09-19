@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/CSS/main_v20230906.css" />
+<style type="text/css">
+
+</style>
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- jQuery CDN -->
+<script type="text/javascript">
+    //body태그의 구성과 필요항목을 모두 로딩한 후 jQuery실행 ready보다 느리다.
+    $(window).load(function(){
+        alert("load");
+    })
+    //body태그내 태그 구성만 로딩한 후 jQuery실행
+    // $(document).ready(function(){
+    //     alert("ready");
+    // })
+    $(function(){
+        alert("ready생략!!");
+    })
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

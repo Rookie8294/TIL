@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/CSS/main_v20230906.css" />
+<style type="text/css">
+    #div{ font-size:  40px; font-family: '궁서체'; color: #005fb8;}
+    /* jQuery에서 사용할 class속성 */
+    .test{ border: 1px solid #333; font-size: 25px; font-weight: bold; text-align: center; }
+    .test2{ color: aqua; }
+</style>
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- jQuery CDN -->
+<script type="text/javascript">
+    $(function(){
+        //css함수
+        //값얻기
+        var output = "";
+        output +="div1의 속성값</br>";
+        output += "글자 크기" + $("#div").css("font-size") + "</br>";
+        output += "글꼴" + $("#div").css("font-family") + "</br>";
+        output += "글자 색" + $("#div").css("color") + "</br>";
+
+        $("#output").html(output);
+
+
+        //값 설정 .css("속성명","속성값")
+        //속성 하나만 설정가능
+        $("#div2").css("color", "#FF0000");
+        $("#div2").css("font-weight", "bold");
+        $("#div2").css("font-size", "30px");
+
+
+        //class 추가
+        $("#btnAdd").click(function(){
+            //기존  CSS속성 중 중복되지 않는 속성은 유지된다.
+            $("#cssDiv").addClass("test");
+        })
+
+        //class 삭제
+        $("#btnRemove").click(function(){
+            $("#cssDiv").removeClass("test");
+        })
+
+        //
+
+    });//ready
+</script>
+
+</head>
+<body>
+
+    <div id="div">DIV1</div>
+    <div id="div2">DIV2</div>
+    <div id="output"></div>
+
+    <input type="button" value="class 속성 설정" class="btn" id="btnAdd" />
+    <input type="button" value="class 속성 삭제" class="btn" id="btnRemove" />
+    <div id="cssDiv" class="test2">
+        내일 쉼
+    </div>
+</body>
+</html>
