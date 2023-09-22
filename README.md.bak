@@ -29,3 +29,4 @@
   7. key event, popup
   8. Storage, JSON
   9. closure
+  10. jQuery

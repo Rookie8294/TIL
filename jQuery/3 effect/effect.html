@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/CSS/main_v20230906.css" />
+<style type="text/css">
+    #imgDiv{ height:300px ;}
+    span{ font-weight: bold; color: brown;}
+</style>
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- jQuery CDN -->
+<script type="text/javascript">
+$(function(){
+    $("#btnHide").click(function(){
+        $("#img").hide();
+    });
+
+    $("#btnShow").click(function(){
+        $("#img").show();
+    })
+
+    $("#btnToggle").click(function(){
+        $("#img").toggle();
+    })
+
+    $("#btnFadeout").click(function(){
+        //$("#img").fadeOut(1000);
+        //숨김작업 완료 후 코드 실행
+        $("#img").fadeOut(1000, function(){
+            alert("숨김작업 완료");
+        });
+    })
+    $("#btnFadein").click(function(){
+        $("#img").fadeIn(1000);
+    })
+    $("#btnToggle2").click(function(){
+        $("#img").toggle(1000);
+    })
+
+    //글자를 깜박임 효과
+    $("#btn").click(function(){
+        var id = $("#id").val();
+        if( id==""){
+            for( var i = 0; i< 5; i++){
+                $("#idWarn").fadeIn(500).fadeOut(500)
+            }
+        }
+    })
+
+    //펼쳐 보이기, 말아 올리기
+});//ready
+</script>
+
+</head>
+<body>
+    <div id="imgDiv">
+        <img src="../common/images/hcy.png" id="img">
+    </div>
+    <input type="button" value="숨기기" class="btn" id="btnHide"/>
+    <input type="button" value="보이기" class="btn" id="btnShow"/>
+    <input type="button" value="반전" class="btn" id="btnToggle"/>
+    <input type="button" value="서서히 사라지기" class="btn" id="btnFadeout"/>
+    <input type="button" value="서서히 보이기" class="btn" id="btnFadein"/>
+    <input type="button" value="서서히 반전" class="btn" id="btnToggle2"/>
+
+    <div>
+        <input type="text" id="id" name="id" class="inputBox" /><span id="idWarn">아이디는 필수 입력!!!</span><br>
+        <input type="button" value="입력" class="btn" id="btn" />
+    </div>
+
+    <div></div>
+
+</body>
+</html>

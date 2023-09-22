@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/CSS/main_v20230906.css" />
+<style type="text/css">
+
+</style>
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- jQuery CDN -->
+<script type="text/javascript">
+    $(function(){
+        //click
+        $("#btn").click(function(){
+            test();
+        })
+        $("#atag").click(function(){
+            test();
+        })
+        function test(){
+            alert("클릭됨");
+        }//test
+
+        //change
+        $("#sel").change(function(){
+            alert("변경됨");
+        })
+        $("#txt").change(function(){ //커서가 들어갔을 때의 값과 빠져나갔을 때의 값이 다를 때
+            alert("변경되었습니다.")
+        })
+
+        //focus
+        $("#txt2").focusin(function(){
+            $("#output").html("커서가 들어감");
+        })
+        $("#txt3").focusout(function(){
+            $("#output").html("<strong>커서가 빠져나감</strong>")
+        })
+        //blur
+        $("#txt4").blur(function(){
+            $("#output").html("blurblurblur")
+        })
+
+        //key
+        $("#txt5").keydown(function(evt){//키코드를 얻고 싶다면 무기명함수를 매개변수를 설정한다.
+            //키가 눌리는 시점에 이벤트가 발생하기 때문에 keycode는 얻지만key text는 얻을 수 없다.
+            $("#output").html("<strong>키가 눌림</strong> : " + $("#txt5").val() + "/ " + evt.which)
+        })
+        $("#txt6").keyup(function(evt){
+            var keyText = $("#txt6").val();
+            var keyChar = evt.which;
+
+            $("#output").html("<strong>키가 올라옴</strong> : " + keyText + "/ " + keyChar )
+        })
+
+        //mouse
+        $("#img").mouseover(function(){
+            $("#output").html("<img src='../common/images/hcy.png' >")
+        })
+
+        $("#img").mouseout(function(){
+            $("#output").html("<img src='' >")
+        })
+        $("#img3").hover(function(){
+            $("#output").html("<img src='../common/images/hcy.png' >")
+        })
+
+
+    })//ready
+    
+</script>
+
+</head>
+<body>
+    <input type="button" value="클릭" class="btn" id="btn"><br>
+    <a href="#void" id="atag">클릭</a><br>
+    <select id="sel">
+        <option>Java SE</option>
+        <option>Oracle</option>
+        <option>JDBC</option>
+    </select><br>
+    <input type="text" name="text" id="txt" class="inputBox" placeholder="변경"/><br>
+    <label>커서가 들어갈 때</label>
+    <input type="text" name="text" id="txt2" class="inputBox" placeholder="커서가 들어옴"><br>
+    <label>커서가 빠져나갈 때</label>
+    <input type="text" name="text" id="txt3" class="inputBox" placeholder="커서가 빠져나감"><br>
+    <label>커서가 빠져나갈 때 : blur</label>
+    <input type="text" name="text" id="txt4" class="inputBox" placeholder="커서가 빠져나감 : blur"><br>
+    <label>키가 눌렸을 때</label>
+    <input type="text" name="text" id="txt5" class="inputBox" placeholder="keydwon"><br>
+    <label>키가 올라올 때</label>
+    <input type="text" name="text" id="txt6" class="inputBox" placeholder="keyup"><br>
+    <label>마우스가 올라올 때</label>
+    <img src="../common/images/hcy.png" id="img" ><br>
+    <label>마우스가 빠져나갔을 때</label>
+    <img src="../common/images/hcy.png" id="img2">.
+    <label>hover</label>
+    <img src="../common/images/hcy.png" id="img3">
+
+
+    <div id="output"></div>
+</body>
+</html>

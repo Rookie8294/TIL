@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/CSS/main_v20230906.css" />
+<style type="text/css">
+
+</style>
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- jQuery CDN -->
+<script type="text/javascript">
+    $(function(){
+        $("#btn").click(function(){
+            checkNull();
+        })
+
+        $("#id").keydown(function(evt){
+            if( evt.which == 13){
+                checkNull();
+            }
+        })
+
+    })//ready
+
+    function checkNull(){
+        var id = $("#id").val();
+        var pass = $("#pass").val();
+
+        $("#id").focus
+        if( id ==""){
+            $("#output1").html("<strong style='color:red'>아이디는 필수 입력입니다.</strong>")
+            return;
+        }
+        $("#pass").focus()
+        if( pass ==""){
+            $("#output2").html("<strong style='color:red'>비밀번호는 필수 입력입니다.</strong>")
+            return;
+        }
+
+        location.href="https://www.sist.co.kr/index.jsp";
+        
+
+    }//checkNull
+</script>
+
+</head>
+<body>
+    <input type="text" id="id" class="inputBox"><br>
+    <div id="output1"></div>
+    <input type="text" id="pass" class="inputBox"><br>
+    <div id="output2"></div>
+    <input type="button" value="login" id="btn" class="btn">
+</body>
+</html>

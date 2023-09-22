@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/CSS/main_v20230906.css" />
+<style type="text/css">
+
+</style>
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- jQuery CDN -->
+<script type="text/javascript">
+    $(function(){
+
+        var date = new Date();
+        var month = date.getMonth() + 1;
+        if(month < 10){
+            month = "0" + month;
+        }//end if
+
+        $("#date").val(date.getFullYear() + "-" + month + "-" + date.getDate());
+
+        $("#btn").click(function(){
+            //from 태그 안에 정의된 모든 HTML From Control들의 값을 backend로 전송하기위해 submit함수를 사용합니다.
+            $("#frm").submit(); // input="submit" 은 쓰지 않는다
+
+        })//end click
+
+        $("#btn2").click(function(){
+            getValue();
+        })
+
+        $("#btn3").click(function(){
+            getArrValue();
+        })
+    })//ready
+
+    function getValue(){
+        var output = "";
+        //var()함수로 값을 얻는 HTML Form Controll
+        output += "text : " + $("#id").val() + "<br/>";
+        output += "password : " + $("#pass").val() + "<br/>";
+        output += "date : " + $("#date").val() + "<br/>";
+        output += "tel : " + $("#tel").val() + "<br/>";
+        output += "select : " + $("#sel").val() + "<br/>";
+        output += "textarea : " + $("#ta").val() + "<br/>";
+        
+        $("#output").html(output);
+    }//end getValue
+    
+    function getArrValue(){
+        //alert( $("#m").is(":checked") + " / " + $("#f").is(":checked") )
+        
+        var genderFlag = false;
+        if( !$("#m").is(":checked") || $("#f").is(":checked")){
+            alert("성별을 선택해주세요.");
+            return;
+        }//end if
+        //var gender = $(".gender:checked").val();//선택된 것의 값을 얻는다. ( 값이거나 배열로 반환된다.)
+        //alert(gender.length);
+        var genderArr = $(".gender");//class속성이 gender인 Node(tag)를 찾고
+        for( var i = 0; i< genderArr.length; i++){//Node의 수 만큼 반복 시키고
+            if($(genderArr[i]).is(":checked")){ //checked된 상태를 얻습니다. (behavior)
+                alert("선택된 라디오의 값 : " + $(genderArr[i]).val() );
+            }//end if
+            //이름으로 찾아낸걸 객체로 만들었다 ( DOM )
+        }//end for
+
+        //checkbox의 값 얻기
+        //var checkArr=$("[name = 'hobby']"); // 같은 이름이 여러개 존재하므로 배열로 얻어진다.
+        //alert(checkArr.length)
+        var temp = "";
+        /*
+        for(var i=0; i< checkArr.length; i++){
+            if( $(checkArr[i]).is(":checked")){
+                temp += $(checkArr[i]).val() + " / ";
+            }
+        }//end for
+        */
+
+        //선택된 체크박스만 얻을 수 있다. => 반복문 안에서 if로 비교할 필요가 없다.
+        var checkArr=$("[name = 'hobby']:checked");
+        alert("선택된 체크박스의 값 : " + temp );
+
+    }//end getArrValue
+</script>
+
+</head>
+<body>
+    <form action="http://sist.co.kr" name="frm" id="frm">
+        <label><strong style="color: blueviolet;">값 얻기</strong></label><br>
+        <input type="text" name="id" id="id" class="inputBox" placeholder="아이디" value="testId"><br>
+        <input type="password" name="pass" id="pass" class="inputBox" placeholder="비밀번호" value="1234"><br>
+        <input type="date" name="date" id="date" class="inputBox"><br>
+        <input type="tel" name="tel" id="tel" class="inputBox" placeholder="전화번호" value="010-2444-2555"><br>
+
+        <select name="sel" id="sel">
+            <option value="짜장면">짜장면</option>
+            <option value="탕수육">탕수육</option>
+            <option value="짬뽕">짬뽕</option>
+            <option value="볶음밥">볶음밥</option>
+            <option value="양장피">양장피</option>
+            <option value="유린기">유린기</option>
+            <option value="잡채밥">잡채밥</option>
+            <option value="꿔바로우">꿔바로우</option>
+            <option value="마파두부">마파두부</option>
+        </select><br>
+        <textarea class="inputBox" name="ta" id="ta" style="width: 300px; height: 100px; ">오늘은 월요일 같은 목요일</textarea><br>
+
+        <input type="button" value="val()로 값 얻기" id="btn2" class="btn" /><br>
+        
+
+        <!--radio-->
+        <label>성별</label>
+        <input type="radio" name="gender" class="gender" id="m" value="남자" />남자
+        <input type="radio" name="gender" class="gender" id="f" value="여자" />여자
+        <br>
+        <!--checkbox-->
+        <label>취미</label>
+        <input type="checkbox" name="hobby" value="자바"/>자바
+        <input type="checkbox" name="hobby" value="이클립스먹기"/>이클립스먹기
+        <input type="checkbox" name="hobby" value="유튜브보기"/>유튜브보기
+        <input type="checkbox" name="hobby" value="독서"/>독서
+        <input type="checkbox" name="hobby" value="게임"/>게임
+        <input type="checkbox" name="hobby" value="웹툰"/>웹툰
+        </br>
+        <input type="button" value="is()로 선택된 것들만 값 얻기" id="btn3" class="btn" /> </br>
+
+        <input type="button" value="전송" id="btn" class="btn" />
+
+        <div id="output"></div>
+    </form>
+</body>
+</html>
